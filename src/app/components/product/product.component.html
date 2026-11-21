@@ -1,0 +1,31 @@
+<div class="product mb-4">
+  <div class="head">
+    @if (productInfo().badge) {
+      <span class="product-badge">
+        {{ productInfo().badge }}
+      </span>
+    }
+    <img src="./{{ productInfo().img }}" />
+  </div>
+  <div class="body p-3">
+    <h2>{{ productInfo().name }}</h2>
+    <p>{{ productInfo().des }}</p>
+
+    <div class="price">
+      <div class="pricee">PRICE :</div>
+      <h3>{{ productInfo().price | currency }}$</h3>
+    </div>
+
+    <div class="line">
+      <span></span>
+      <i class="fa-solid fa-star"></i>
+      <span></span>
+    </div>
+
+    <button class="cart-btn" (click)="addProduct(productInfo())">
+      <i class="fa-solid fa-cart-shopping"></i>
+      Add To Cart
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</div>

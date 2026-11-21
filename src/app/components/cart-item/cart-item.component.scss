@@ -1,0 +1,129 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(120, 42, 67, 0.12);
+  text-align: left;
+  transition: 0.5s;
+
+  .image {
+    width: 65px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f5edef;
+    border: 1px solid rgba(120, 42, 67);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .info {
+    h6 {
+      color: #32131f;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+
+    .price {
+      color: #a34b64;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+
+      button {
+        width: 25px;
+        height: 25px;
+        border: 1px solid rgba(120, 42, 67, 0.2);
+        border-radius: 5px;
+        background: white;
+        color: #782a43;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background: #32131f;
+          color: white;
+        }
+      }
+
+      span {
+        color: #32131f;
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .subtotal {
+      color: #32131f;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .remove-btn {
+      border: none;
+      background: transparent;
+      color: #b77b88;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        color: #c03950;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+//Animation of cart item
+:host {
+  display: block; //must because the default inline
+  animation: cartItemAnimation 0.5s ease;
+  transform-origin: center;
+}
+@keyframes cartItemAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(35px) scale(0.92);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}

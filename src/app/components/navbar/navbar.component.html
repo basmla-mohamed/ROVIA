@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <span class="logo-icon">
+        <img src="assets/logo.png" alt="" class="img-fluid" />
+      </span>
+      <span class="logo-name">RO<span>VIA.</span></span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#roviaNavbar"
+      aria-controls="roviaNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            href="#home"
+            [class.active]="activeLink === 'Home'"
+            (click)="changeActive('Home')"
+          >
+            <i class="fa-solid fa-house"></i> Home</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#products"
+            [class.active]="activeLink === 'Products'"
+            (click)="changeActive('Products')"
+            ><i class="fa-solid fa-solid fa-layer-group"></i> Products</a
+          >
+        </li>
+
+        <li class="nav-item" (click)="openPopup()">
+          <a class="nav-link" href="#login"><i class="fa-regular fa-user"></i> Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="loginPopup" [class.active]="isPopupOpen()" (click)="closePopup()">
+  <div class="box" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closePopup()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="icon">
+      <i class="fa-regular fa-user"></i>
+    </div>
+
+    <h2>You Are Welcome</h2>
+    <p>Sign in to continue your journey with ROVIA.</p>
+
+    <form>
+      <div class="input">
+        <i class="fa-regular fa-envelope"></i>
+        <input type="email" placeholder="Email Address" />
+      </div>
+
+      <div class="input">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Password" />
+      </div>
+
+      <button type="submit" class="login">Login</button>
+
+      <span class="register"> Don't have an account? <a href="#home">Create Account</a> </span>
+    </form>
+  </div>
+</div>
+
+<div class="upToHome" (click)="scrollToTop()" #up>
+  <i class="fa-solid fa-angles-up"></i>
+</div>

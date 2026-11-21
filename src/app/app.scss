@@ -1,0 +1,61 @@
+#products {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 !important;
+  background: linear-gradient(135deg, #32131f 0%, #4b1c30 50%, #782a43 100%);
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+
+    &::before {
+      content: 'ROVIA';
+      position: absolute;
+      top: -65px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 100px;
+      font-weight: 900;
+      letter-spacing: 15px;
+      color: rgba(120, 42, 67, 0.2);
+      z-index: -1;
+    }
+
+    i {
+      display: block;
+      font-size: 30px;
+      color: #a33e60;
+      text-shadow: 0 0 10px rgba(196, 77, 109, 0.7);
+      margin-bottom: 15px;
+      animation: iconAnimation 3s ease-in-out infinite;
+    }
+
+    h2 {
+      color: #32131f;
+      font-size: 42px;
+      font-weight: 800;
+
+      span {
+        color: #a33e60;
+        position: relative;
+      }
+    }
+  }
+}
+
+@keyframes iconAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}

@@ -1,0 +1,34 @@
+<div class="cart-item d-flex justify-content-between align-items-center">
+  <div class="one d-flex align-items-center flex-row column-gap-3">
+    <div class="image">
+      <img src="{{ cartItem().img }}" />
+    </div>
+
+    <div class="info">
+      <h6>{{ cartItem().name }}</h6>
+
+      <span class="price"> {{ cartItem().price | currency }}</span>
+
+      <div class="quantity">
+        <button (click)="cartService.subtractProductFromCart(cartItem().id)">−</button>
+        <span>{{ cartItem().quantity }}</span>
+        <button (click)="cartService.addProductIntoCart(cartItem())">+</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="two d-flex justify-content-start align-items-baseline">
+    <div class="text">
+      <span class="subtotal">
+        <p class="text-left">{{ cartItem().price * cartItem().quantity | currency }}</p></span
+      >
+
+      <button class="remove-btn d-flex align-items-center column-gap-1">
+        <i class="fa-solid fa-trash-can"></i>
+        <p class="mb-0 text-decoration-underline" (click)="cartService.removeItem(cartItem().id)">
+          Remove
+        </p>
+      </button>
+    </div>
+  </div>
+</div>

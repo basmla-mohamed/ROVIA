@@ -1,0 +1,303 @@
+@use './../../../../public/scss/mixin.scss' as *;
+
+#home {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  @include center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(50, 19, 31, 0.94) 0%,
+      rgba(50, 19, 31, 0.82) 48%,
+      rgba(75, 28, 48, 0.48) 100%
+    ),
+    url('/assets/home.jfif');
+  color: #fff0f2;
+
+  .part1 {
+    .one {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+      color: #f09bae;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      animation: contentAnimation 1s 0.05s both;
+
+      .line {
+        width: 40px;
+        height: 1px;
+        background: #f09bae;
+        box-shadow: 0 0 12px #f09bae;
+      }
+    }
+
+    h1 {
+      max-width: 750px;
+      margin-bottom: 25px;
+      color: #fff0f2;
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -3px;
+      animation: headAnimation 1.2s 0.15s both;
+
+      .first {
+        display: block;
+        color: #f09bae;
+        text-shadow: 0 0 35px rgba(240, 155, 174, 0.22);
+      }
+
+      .sec {
+        display: block;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 240, 242, 0.75);
+      }
+    }
+
+    .description {
+      max-width: 490px;
+      margin-bottom: 35px;
+      color: rgba(255, 240, 242, 0.72);
+      font-size: 15px;
+      line-height: 2;
+      letter-spacing: 0.3px;
+      animation: contentAnimation 1s 0.35s both;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      animation: contentAnimation 1s 0.5s both;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      min-height: 52px;
+      padding: 0 24px;
+      @include center;
+      gap: 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: 0.5s;
+
+      i {
+        transition: 0.5s;
+      }
+    }
+
+    .primary-btn {
+      color: #32131f;
+      background: linear-gradient(120deg, #f09bae, #c44d6d);
+      box-shadow: 0 10px 30px rgba(196, 77, 109, 0.2);
+
+      &:hover {
+        color: #32131f;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(196, 77, 109, 0.4);
+
+        i {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    .secondary-btn {
+      color: #fff0f2;
+      border: 1px solid rgba(255, 240, 242, 0.35);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+
+      &:hover {
+        color: #f09bae;
+        border-color: #f09bae;
+        background: rgba(240, 155, 174, 0.08);
+        transform: translateY(-5px);
+
+        i {
+          transform: translate(3px, -3px);
+        }
+      }
+    }
+  }
+
+  .part2 {
+    animation: contentAnimation 1.5s 0.2s both;
+    .contentt {
+      position: relative;
+      min-height: 500px;
+      @include center;
+      flex-direction: column;
+      overflow: hidden;
+
+      .circle {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border: 1px solid rgba(240, 155, 174, 0.25);
+        border-radius: 50%;
+        box-shadow: 0 0 50px rgba(240, 155, 174, 0.08);
+        animation: circle 10s linear infinite;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: -1px;
+          border: 3px solid transparent;
+          border-top-color: #f09bae;
+          border-radius: 50%;
+          filter: drop-shadow(0 0 8px #f09bae);
+          animation: circle 4s linear infinite;
+        }
+      }
+      i {
+        position: relative;
+        z-index: 1;
+        color: #f09bae;
+        font-size: 115px;
+        filter: drop-shadow(0 0 25px rgba(240, 155, 174, 0.4));
+        animation: iconAnimation 4s ease-in-out infinite;
+      }
+
+      .name {
+        position: relative;
+        z-index: 1;
+        color: #fff0f2;
+        font-size: clamp(4rem, 8vw, 7rem);
+        font-weight: 900;
+        letter-spacing: 8px;
+        text-shadow: 0 0 35px rgba(240, 155, 174, 0.2);
+      }
+
+      .sec-line {
+        width: 65px;
+        height: 1px;
+        margin-top: 15px;
+        background: #f09bae;
+        box-shadow: 0 0 12px #f09bae;
+      }
+
+      p {
+        margin-top: 18px;
+        color: rgba(255, 240, 242, 0.65);
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
+
+      .b {
+        position: absolute;
+        bottom: 25px;
+        color: rgba(240, 155, 174, 0.6);
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(240, 155, 174, 0.08);
+    border-top: 1px solid rgba(240, 155, 174, 0.2);
+    border-bottom: 1px solid rgba(240, 155, 174, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+      width: max-content;
+      animation: movingText 25s linear infinite;
+
+      span {
+        color: rgba(255, 240, 242, 0.8);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 4px;
+      }
+
+      i {
+        color: #f09bae;
+        font-size: 13px;
+        text-shadow: 0 0 12px #f09bae;
+      }
+    }
+
+    &:hover .content {
+      animation-play-state: paused;
+    }
+  }
+}
+
+// Animations
+@keyframes contentAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes movingText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes iconAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

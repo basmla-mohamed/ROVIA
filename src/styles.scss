@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  ::selection {
+    background-color: #a33e60;
+    color: #fff;
+  }
+}
+
+.alertPopup {
+  border: 1px solid #f0c58b;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+}
+
+.titlePopup {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.buttonPopup {
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: 700;
+  color: #32131f !important;
+  transition: 0.5s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(240, 197, 139, 0.3);
+  }
+}
