@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#210D16"/><stop offset="100%" stop-color="#782A43"/>
+</linearGradient></defs>
+<rect x="8" y="8" width="1184" height="234" rx="28" fill="url(#g)" stroke="#F0C58B" stroke-width="3"/>
+<circle cx="1120" cy="58" r="110" fill="#F0C58B" opacity=".06"/>
+<text x="58" y="70" fill="#F0C58B" font-family="Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="2">ROVIA</text>
+<path d="M58 91 H250" stroke="#F0C58B" stroke-width="4" stroke-linecap="round"/>
+<text x="58" y="118" fill="#E8C9CF" font-family="Arial, sans-serif" font-size="20">SHOP SMART  •  SHOP STYLISH</text>
+<text x="62" y="158" fill="#FAF7F6" font-family="Arial, sans-serif" font-size="22">ELEGANCE IN EVERY CLICK</text>
+<text x="62" y="192" fill="#FAF7F6" font-family="Arial, sans-serif" font-size="22">A modern shopping experience crafted with Angular</text>
+</svg>
